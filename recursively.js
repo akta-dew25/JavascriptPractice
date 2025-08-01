@@ -28,3 +28,26 @@ let magic = (obj, parent) => {
 magic(user, "user");
 
 console.log(finalObj);
+
+
+function loop(x){
+  if (x>=10) {
+    return
+  }
+  loop(x+1)
+  console.log(x);
+  
+}
+
+ loop(0)
+
+ //recursion analogous to loop
+
+ let y = 0
+ while (y < 10) {
+  y++
+  console.log(y);
+  
+ }
+
+ 

@@ -27,28 +27,27 @@ function x() {
 
 var z = x();
 
-// console.log(z);
+// console.log(z,"zzz");
 // z()
 
-function outest(){
-var f = 20
-function outer (b){
-  function inner(){
-    console.log(g , f,b);
-    
-  }
-    let g = 10
+function outest() {
+  var f = 20;
+  function outer(b) {
+    function inner() {
+      console.log(g, f, b);
+    }
+    let g = 10;
 
-  return inner
-}
-return outer
+    return inner;
+  }
+  return outer;
 }
 
 // let g = 100
 
-var close = outest()("hello")
+var close = outest()("hello");
 
-close()
+close();
 
 // setTimeout and closure examples
 
@@ -72,7 +71,7 @@ function y() {
 function y() {
   for (let i = 1; i <= 5; i++) {
     setTimeout(function () {
-      console.log(i);
+      // console.log(i);
     }, i * 1000);
   }
 }
@@ -85,31 +84,52 @@ function y() {
   for (var i = 1; i <= 5; i++) {
     function close(x) {
       setTimeout(function () {
-        console.log(x);
+        // console.log(x);
       }, x * 1000);
     }
     close(i);
   }
 }
-y()
+y();
 
+function Counter() {
+  var count = 0;
 
-function Counter (){
-var count = 0
-
-this.incremetCounter = function(){
-  count++
-  console.log(count);
-  
-}
-this.decrementCounter = function (){
-  count--
-  console.log(count);
-  
-}
+  this.incremetCounter = function () {
+    count++;
+    console.log(count);
+  };
+  this.decrementCounter = function () {
+    count--;
+    console.log(count);
+  };
 }
 
-var counter1 = new Counter()
+var counter1 = new Counter();
 
-counter1.incremetCounter()
-counter1.decrementCounter()
+counter1.incremetCounter();
+counter1.decrementCounter();
+
+//closure
+
+const pet = function (name) {
+  const getName = function () {
+    return name;
+  };
+  return getName;
+};
+
+const petname = pet("ekta");
+console.log(petname());
+
+function A(x) {
+  function B(y) {
+    function C(z) {
+      return console.log(x + y + z);
+    }
+    C(3);
+  }
+  B(2);
+}
+
+A(1);

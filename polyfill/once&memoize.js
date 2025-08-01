@@ -34,9 +34,9 @@ function greet(name) {
 
 const greetOnce = once(greet);
 
-// console.log(greetOnce("Ekta"));
-// console.log(greetOnce("Kiran"));
-// console.log(greetOnce("Nitya"));
+console.log(greetOnce("Ekta"));
+console.log(greetOnce("Kiran"));
+console.log(greetOnce("Nitya"));
 
 // Memoize = when a function is called with the same arguments multiple times it returns the cache result intead of reexecuting the potentially expensive computation.
 
@@ -70,12 +70,12 @@ return {uid}
 const memoizeGetUserdata= memoize(getUserData)
 
 async function global(){
-  console.log(await memoizeGetUserdata("123"));
-  console.log(await memoizeGetUserdata("123"));
-  console.log(await memoizeGetUserdata("123"));
-  console.log(await memoizeGetUserdata("124"));
-  console.log(await memoizeGetUserdata("124"));
-  console.log(await memoizeGetUserdata("124"));
+  // console.log(await memoizeGetUserdata("123"));
+  // console.log(await memoizeGetUserdata("123"));
+  // console.log(await memoizeGetUserdata("123"));
+  // console.log(await memoizeGetUserdata("124"));
+  // console.log(await memoizeGetUserdata("124"));
+  // console.log(await memoizeGetUserdata("124"));
   
 }
 
