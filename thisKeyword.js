@@ -1,6 +1,6 @@
 // this is global space
 
-console.log(this);//global object - window global
+// console.log(this);//global object - window global
 
 // this inside a function
 
@@ -18,8 +18,8 @@ function x (){
 
 // this keyword value  depends on  how the function is called - (window)
 
-x() - //undefined - using strict mode
-window.x() // window object
+// x()  //undefined - using strict mode
+// window.x() // window object
 
 // this inside a object's method
 
@@ -33,7 +33,7 @@ const obj = {
     }
 }
 
-obj.x()
+// obj.x()
 
 // call apply  bind method (sharing method)
 
@@ -47,13 +47,13 @@ const student = {
     }
 }
 
-student.printName() // ekta
+// student.printName() // ekta
 
 const student2 = {
     name :"dewangan"
 }
 
-student.printName.call(student2) // dewangan.   value of this student2
+// student.printName.call(student2) // dewangan.   value of this student2
 
 // this inside arrow function -- arrow function does not have their own this - the this value of the enclosing lexical context - is that global         
 
@@ -65,7 +65,7 @@ const obj1 = {
    }
 }
 
-obj1.x() // window object 
+// obj1.x() // window object 
 
 // this inside nested arrow function
 
@@ -81,9 +81,43 @@ const obj2 = {
     }
 }
 
-obj2.x() // obj2 = {a:10,x:f}
+// obj2.x() // obj2 = {a:10,x:f}
 
 // this inside DOM - reference to HTML element
 
 
+//  this keyword = this keyword refers to the object that the function is a property of.
+//  this keyword will always depend on the object that is invoking the function.
+
+var object1 = {
+ name : "akshay",
+ getName : function(){
+    console.log(this.name);
+    
+ }
+}
+object1.getName() // akshay
+
+var getName = object1.getName
+
+var object2 = {
+    name :"ekta", getName
+}
+
+object2.getName() // ekta
+
+var add = {
+    address :"korba",
+    getAddress :function(){
+        console.log(this.address);
+        
+    }
+}
+
+var getAddress = add.getAddress
+ var add2 = {
+    address :'banglore'
+ }
+
+ add2.getAddress() // will be an error
 

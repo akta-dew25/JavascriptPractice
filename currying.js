@@ -17,6 +17,8 @@ let multiply1 = function(x){
     }
 }
 
-let multiplyByThree = multiply1(2)
-let multiplyByfour = multiplyByThree(3)
-multiplyByfour(4)
+// let multiplyByThree = multiply1(2)
+// let multiplyByfour = multiplyByThree(3)
+// multiplyByfour(4)
+
+multiply1(2)(3)(4)
