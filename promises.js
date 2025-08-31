@@ -103,9 +103,9 @@ const p3 = new Promise((resolve, reject) => {
     resolve("P3 success");
   }, 2000);
 });
-Promise.all([p1, p2, p3]).then((res) => {
-  console.log(res);
-});
+// Promise.all([p1, p2, p3]).then((res) => {
+//   console.log(res);
+// });
 // output =['P1 success', 'P2 success', 'P3 success']
 
 const p4 = new Promise((resolve, reject) => {
@@ -123,16 +123,16 @@ const p6 = new Promise((resolve, reject) => {
     resolve("P3 success");
   }, 2000);
 });
-Promise.all([p4, p5, p6])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
-// output =P2 reject
+// Promise.all([p4, p5, p6])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => console.log(err));
+// // output =P2 reject
 
-Promise.allSettled([p4, p5, p6])
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+// Promise.allSettled([p4, p5, p6])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
 
 //   output = [
 //     {
@@ -149,24 +149,24 @@ Promise.allSettled([p4, p5, p6])
 //     }
 // ]
 
-Promise.race([p4, p5, p6])
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+// Promise.race([p4, p5, p6])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
 
 // output = P2 reject
 
-Promise.any([p4, p5, p6])
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+// Promise.any([p4, p5, p6])
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err));
 
-// ouput = P3 success
+// // ouput = P3 success
   
 
-Promise.any([p1, p2, p3])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
+// Promise.any([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => console.log(err));
 
 //   output = P2 success
 //   settled can be a success or reject
@@ -187,11 +187,11 @@ const p9 = new Promise((resolve, reject) => {
   }, 2000);
 });
 
-Promise.any([p7, p8, p9])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err.errors));
+// Promise.any([p7, p8, p9])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => console.log(err.errors));
 
 // output = AggregateError: All promises were rejected
 // [
@@ -199,4 +199,29 @@ Promise.any([p7, p8, p9])
 //     "P2 rject",
 //     "P3 reject"
 // ]
+
+
+//  promise created
+
+function sumOfAllThree(...args){
+ return new Promise((resolve,reject)=>{
+  if (args.length > 3) {
+    reject("rejected")
+  } else {
+    let sumOfArg =0
+    let i = 0
+    while(i < args.length){
+ sumOfArg += args[i]
+    i++
+    }
+     resolve ("sum ::", +sumOfArg
+     )
+  }
+  
+ })
+}
+
+sumOfAllThree(8,9,9).then(result =>console.log(result)
+).catch(error=>console.log(error)
+)
 

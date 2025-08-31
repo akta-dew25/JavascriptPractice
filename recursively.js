@@ -83,7 +83,17 @@ if (arr.length === 1) {
 }
 }
 
-console.log(sum([2,3,4,5]));
+// console.log(sum([2,3,4,5]));
+
+function factorial(x){
+  if (x===0) {
+    return 1
+  }
+  return x * factorial(x-1)
+}
+
+console.log(factorial(5));
+
 
 
 
